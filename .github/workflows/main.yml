@@ -23,6 +23,7 @@ jobs:
           extraFile: ".ansible/extra.yml"
           extraVars: "-e my_first_extra=${{ github.actor }} -e my_second_one=${{ github.sha }}"
           verbosity: "vvv"
-      - uses: tomasnorre/ansible-cli-action@0.0.5
+     - name: Ansible CLI
+       uses: tomasnorre/ansible-cli-client@0.0.2
         with:
           command: "ansible-playbook .ansible/playbooks/sample-playbook.yml"
